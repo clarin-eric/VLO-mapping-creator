@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/">
+   <rdf:Description rdf:about="http://my.example.com/cs/resourceclass">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+      <dcterms:title xml:lang="en">resourceclass</dcterms:title>
+      <dcterms:description xml:lang="en">...</dcterms:description>
+   </rdf:Description>
+   <!-- SKOS XL
+   <rdf:Description rdf:about="http://my.example.com/c/text">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">text</skos:prefLabel>
+      <skosxl:altLabel rdf:resource="http://my.example.com/l/as"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/l/as">
+      <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+      <skosxl:literalForm>Aligned_sentence</skosxl:literalForm>
+      <skos:related rdf:resource="../subject/annotation"/>
+      <skos:related rdf:resource="../genre/aligned_sentence"/>
+      <clavas:mapToGenre>aligned sentence</clavas:mapToGenre>
+   </rdf:Description>
+   -->
+   <rdf:Description rdf:about="http://my.example.com/c/annotatedText">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">annotatedText</skos:prefLabel>
+      <skos:altLabel>AnnotatedTextCorpus</skos:altLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/corpus">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">corpus</skos:prefLabel>
+      <skos:altLabel>OralCorpus</skos:altLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/audioRecording">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">audioRecording</skos:prefLabel>
+      <skos:altLabel>OralCorpus</skos:altLabel>
+   </rdf:Description>
+   
+   <rdf:Description rdf:about="http://my.example.com/c/plainText">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">plainText</skos:prefLabel>
+      <skos:altLabel>AnthologiesDevotional literature</skos:altLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/tool">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">tool</skos:prefLabel>
+      <skos:hiddenLabel xml:lang="en">tol</skos:hiddenLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/service">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">service</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/collection">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">collection</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/database">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">database</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/grammar">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">grammar</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/image">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">image</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/lexicalResource">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">lexicalResource</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/other">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">other</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/physicalObject">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">physicalObject</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/software">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">software</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/structured_data">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">structured data</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/teachingMaterial">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">teachingMaterial</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/videoRecording">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">videoRecording</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/webApplication">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">webApplication</skos:prefLabel>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://my.example.com/c/webService">
+      <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+      <skos:inScheme rdf:resource="http://my.example.com/cs/resourceclass"/>
+      <skos:prefLabel xml:lang="en">webService</skos:prefLabel>
+   </rdf:Description>
+</rdf:RDF>
