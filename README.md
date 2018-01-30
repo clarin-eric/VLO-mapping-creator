@@ -159,6 +159,6 @@ $ java -jar target/vlo-mapping-creator.jar -t src/test/resources/default.xml src
 
 ## TODO
 
-[X] XSL log messages are not handled correctly yet
-[ ] add tests
-[ ] it needs to be possible to provide a vocabulary specific XSL to process the SKOS mapping in more advanced cases
+- [X] XSL log messages are not handled correctly yet
+- [ ] add tests
+- [ ] it needs to be possible to provide a vocabulary specific XSLT to process the SKOS mapping in more advanced cases
