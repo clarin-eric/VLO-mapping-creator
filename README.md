@@ -73,14 +73,88 @@ INF: -d        Enable debug info
 $ java -jar vlo-mapping-creator.jar -s src/test/resources/resourceclass.skos -t src/test/resources/default.xml src/test/resources/resourceclass.csv
 ```
 ```XML
-<?xml version="1.0" encoding="UTF-8"?><value-mappings><origin-facet name="resourceclass"><value-map><target-facet name="resourceclass" removeSourceValue="true" overrideExistingValues="false"/><target-value-set><target-value facet="resourceclass">annotatedText</target-value><target-value facet="resourceclass">text</target-value><source-value>AnnotatedTextCorpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">audioRecording</target-value><source-value>SongsAnthologiesLinguistic corporaCorpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">audioRecording</target-value><source-value>SpeechCorpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">audioRecording</target-value><source-value>Spoken Corpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">corpus</target-value><target-value facet="resourceclass">audioRecording</target-value><source-value>OralCorpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">plainText</target-value><source-value>AnthologiesDevotional literature</source-value></target-value-set><target-value-set><target-value facet="resourceclass">tool</target-value><source-value>tol</source-value></target-value-set></value-map></origin-facet></value-mappings>
+<?xml version="1.0" encoding="UTF-8"?>
+<value-mappings>
+    <origin-facet name="resourceclass">
+        <value-map>
+            <target-facet name="resourceclass" removeSourceValue="true" overrideExistingValues="false"/>
+            <target-value-set>
+                <target-value facet="resourceclass">annotatedText</target-value>
+                <target-value facet="resourceclass">text</target-value>
+                <source-value>AnnotatedTextCorpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <source-value>SongsAnthologiesLinguistic corporaCorpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <source-value>SpeechCorpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <source-value>Spoken Corpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">corpus</target-value>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <source-value>OralCorpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">plainText</target-value>
+                <source-value>AnthologiesDevotional literature</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">tool</target-value>
+                <source-value>tol</source-value>
+            </target-value-set>
+        </value-map>
+    </origin-facet>
+</value-mappings>
 ```
 
 ```sh
 $ java -jar target/vlo-mapping-creator.jar -t src/test/resources/default.xml src/test/resources/resourceclass-full.csv
 ```
 ```XML
-<?xml version="1.0" encoding="UTF-8"?><value-mappings><origin-facet name="resourceclass"><value-map><target-facet name="resourceclass" removeSourceValue="true" overrideExistingValues="false"/><target-value-set><target-value facet="resourceclass">annotatedText</target-value><target-value facet="resourceclass">text</target-value><target-value facet="genre">some</target-value><source-value>AnnotatedTextCorpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">audioRecording</target-value><target-value facet="genre">other</target-value><source-value>SongsAnthologiesLinguistic corporaCorpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">audioRecording</target-value><target-value facet="genre">foo</target-value><source-value isRegex="true">Speech*</source-value></target-value-set><target-value-set><target-value facet="resourceclass">audioRecording</target-value><target-value facet="genre">bar</target-value><source-value>Spoken Corpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">corpus</target-value><target-value facet="resourceclass">audioRecording</target-value><source-value>OralCorpus</source-value></target-value-set><target-value-set><target-value facet="resourceclass">plainText</target-value><source-value>AnthologiesDevotional, "literature"</source-value></target-value-set></value-map></origin-facet></value-mappings>
+<?xml version="1.0" encoding="UTF-8"?>
+<value-mappings>
+    <origin-facet name="resourceclass">
+        <value-map>
+            <target-facet name="resourceclass" removeSourceValue="true" overrideExistingValues="false"/>
+            <target-value-set>
+                <target-value facet="resourceclass">annotatedText</target-value>
+                <target-value facet="resourceclass">text</target-value>
+                <target-value facet="genre">some</target-value>
+                <source-value>AnnotatedTextCorpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <target-value facet="genre">other</target-value>
+                <source-value>SongsAnthologiesLinguistic corporaCorpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <target-value facet="genre">foo</target-value>
+                <source-value isRegex="true">Speech*</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <target-value facet="genre">bar</target-value>
+                <source-value>Spoken Corpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">corpus</target-value>
+                <target-value facet="resourceclass">audioRecording</target-value>
+                <source-value>OralCorpus</source-value>
+            </target-value-set>
+            <target-value-set>
+                <target-value facet="resourceclass">plainText</target-value>
+                <source-value>AnthologiesDevotional, "literature"</source-value>
+            </target-value-set>
+        </value-map>
+    </origin-facet>
+</value-mappings>
 ```
 
 ## TODO
