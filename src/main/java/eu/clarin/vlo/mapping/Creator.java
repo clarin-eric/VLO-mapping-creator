@@ -1,5 +1,6 @@
 package eu.clarin.vlo.mapping;
 
+import ch.qos.logback.classic.Level;
 import java.io.File;
 import java.io.OutputStreamWriter;
 import java.nio.file.Files;
@@ -60,9 +61,16 @@ public class Creator {
         File tmpl = null;
         File tmp = null;
 
-        OptionParser parser = new OptionParser("s:t:?*");
+        OptionParser parser = new OptionParser("ds:t:?*");
         OptionSet options = parser.parse(args);
 
+        debug = options.has("d");
+        
+        if (debug) {
+            ch.qos.logback.classic.Logger logger = (ch.qos.logback.classic.Logger) org.slf4j.LoggerFactory.getLogger("eu.clarin.vlo.mapping");
+            logger.setLevel(Level.DEBUG);
+        }
+        
         if (options.has("s")) {
             skos = new File((String)options.valueOf("s"));
             if (!skos.canRead()) {
@@ -78,8 +86,6 @@ public class Creator {
                 System.exit(1);
             }
         }
-
-        debug = options.has("d");
 
         if (options.has("?")) {
             help();
@@ -98,7 +104,7 @@ public class Creator {
         }
         
         try {
-            Listener l = new Listener("VLO-mapping-creator");
+            Listener l = new Listener(LOGGER,"VLO-mapping-creator");
 
             if (skos!=null) {
                 XsltTransformer tf = TO_CSV.load();
