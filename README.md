@@ -3,16 +3,18 @@ Tool to create a VLO mapping file based on a CSV and optionally a CLAVAS vocabul
 
 ## CSV
 
-```CSV
-"resourceclass","resourceclass","genre"
-"AnnotatedTextCorpus","annotatedText;text","some"
-"SongsAnthologiesLinguistic corporaCorpus","audioRecording","other"
-"~Speech*","audioRecording","foo"
-"Spoken Corpus","audioRecording","bar"
-"OralCorpus","corpus",
-OralCorpus,"audioRecording",
-"AnthologiesDevotional, ""literature""","plainText",
-```
+See [CSV file](src/test/resources/resourceclass-full.csv)
+
+|   | A                                        | B                  | C     |
+| - | ---------------------------------------- | ------------------ | ----- |
+| 1 | resourceclass                            | resourceclass      | genre |
+| 2 | AnnotatedTextCorpus                      | annotatedText;text | some  |
+| 3 | SongsAnthologiesLinguistic corporaCorpus | audioRecording     | other |
+| 4 | ~Speech*                                 | audioRecording     | foo   |
+| 5 | Spoken Corpus                            | audioRecording     | bar   |
+| 6 | OralCorpus                               | corpus             |       |
+| 7 | OralCorpus                               | audioRecording     |       |
+| 8 | AnthologiesDevotional, "literature"      | plainText          |       |
 
 - Row 1: column headers referring to facets
 - Column A: source
