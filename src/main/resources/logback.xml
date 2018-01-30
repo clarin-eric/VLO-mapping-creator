@@ -6,7 +6,7 @@
     </encoder>
   </appender>
   
-  <logger name="eu.clarin.vlo.mapping" level="INFO"/>
+  <logger name="eu.clarin.vlo.mapping" level="DEBUG"/>
   
   <root level="OFF">
     <appender-ref ref="STDOUT" />
