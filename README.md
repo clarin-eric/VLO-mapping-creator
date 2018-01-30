@@ -3,7 +3,7 @@ Tool to create a VLO mapping file based on a CSV and optionally a CLAVAS vocabul
 
 ## CSV
 
-```csv
+```CSV
 "resourceclass","resourceclass","genre"
 "AnnotatedTextCorpus","annotatedText;text","some"
 "SongsAnthologiesLinguistic corporaCorpus","audioRecording","other"
