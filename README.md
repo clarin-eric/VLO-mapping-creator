@@ -14,15 +14,18 @@ See [CSV file](src/test/resources/resourceclass-full.csv)
 | 5 | Spoken Corpus                            | audioRecording     | bar   |
 | 6 | OralCorpus                               | corpus             |       |
 | 7 | OralCorpus                               | audioRecording     |       |
-| 8 | AnthologiesDevotional, "literature"      | plainText          |       |
+| 8 | AnthologiesDevotional, "literature"      | !                  |       |
+| 9 | foo                                      |                    |       |
 
 - Row 1: column headers referring to facets
 - Column A: source
 - Column B and higher: targets, each facet should appear only once
 - Source values (row 2 and higher, column A): if starting with a tilde (`~`) the value is assumed to be a regular expression (see line 4)
 - Target values (row 2 and higher, column B and higher): multiple values for one target facet are to be separated by semicolon (`;`) (see line 2)
+- Target values (row 2 and higher, column A): if the value is a exclamation mark (`!`) the source value is deleted and not replaced (see line 8)
 - Make sure all rows have an equal number of columns!
 - Source values are grouped into the mapping XML (see line 6 and 7)
+- If no target values/actions are known the row will be skipped (see line 9)
 
 ```
 "resourceclass","resourceclass","genre"
@@ -33,6 +36,7 @@ See [CSV file](src/test/resources/resourceclass-full.csv)
 "OralCorpus","corpus",
 OralCorpus,"audioRecording",
 "AnthologiesDevotional, ""literature""","plainText",
+foo,,
 ```
 
 - Double quote (`“`) in the value can be escaped by doubling (`foo””bar`) (see line 8)
@@ -149,7 +153,7 @@ $ java -jar target/vlo-mapping-creator.jar -t src/test/resources/default.xml src
                 <source-value>OralCorpus</source-value>
             </target-value-set>
             <target-value-set>
-                <target-value facet="resourceclass">plainText</target-value>
+                <target-value facet="resourceclass" removeSourceValue="true"/>
                 <source-value>AnthologiesDevotional, "literature"</source-value>
             </target-value-set>
         </value-map>

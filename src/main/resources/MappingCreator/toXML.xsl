@@ -9,6 +9,9 @@
     
     <xsl:param name="defaults" select="()"/>
     
+    <xsl:variable name="RE" select="'~'"/>
+    <xsl:variable name="NOT" select="'!'"/>
+    
     <xsl:template match="text()"/>
 
     <xsl:template name="main">
@@ -56,31 +59,40 @@
                         </xsl:if>
                     </xsl:for-each>
                     <xsl:for-each-group select="$rows/r" group-by="(c)[1]">
-                        <target-value-set>
-                            <xsl:for-each select="current-group()">
-                                <xsl:for-each select="c">
-                                    <xsl:if test="position() gt 1">
-                                        <xsl:variable name="n" select="@n"/>
-                                        <xsl:for-each select="tokenize(.,';')">
-                                            <target-value facet="{$n}">
-                                                <xsl:value-of select="."/>
-                                            </target-value>
-                                        </xsl:for-each>
-                                    </xsl:if>
+                        <xsl:if test="exists(current-group()[count(c[normalize-space(.)!='']) gt 1])">
+                            <target-value-set>
+                                <xsl:for-each select="current-group()">
+                                    <xsl:for-each select="c">
+                                        <xsl:if test="position() gt 1">
+                                            <xsl:variable name="n" select="@n"/>
+                                            <xsl:choose>
+                                                <xsl:when test="normalize-space(.)=$NOT">
+                                                    <target-value facet="{$n}" removeSourceValue="true"/>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:for-each select="tokenize(.,';')">
+                                                        <target-value facet="{$n}">
+                                                            <xsl:value-of select="."/>
+                                                        </target-value>
+                                                    </xsl:for-each>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:if>
+                                    </xsl:for-each>
                                 </xsl:for-each>
-                            </xsl:for-each>
-                            <source-value>
-                                <xsl:choose>
-                                    <xsl:when test="matches(current-grouping-key(),'^~.*$')">
-                                        <xsl:attribute name="isRegex" select="'true'"/>
-                                        <xsl:value-of select="replace(current-grouping-key(),'^~','')"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="current-grouping-key()"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </source-value>
-                        </target-value-set>
+                                <source-value>
+                                    <xsl:choose>
+                                        <xsl:when test="matches(current-grouping-key(),concat('^',$RE,'.*$'))">
+                                            <xsl:attribute name="isRegex" select="'true'"/>
+                                            <xsl:value-of select="replace(current-grouping-key(),concat('^',$RE),'')"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="current-grouping-key()"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </source-value>
+                            </target-value-set>
+                        </xsl:if>
                     </xsl:for-each-group>
                 </value-map>
             </origin-facet>

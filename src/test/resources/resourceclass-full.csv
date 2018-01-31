@@ -5,4 +5,5 @@
 "Spoken Corpus","audioRecording","bar"
 "OralCorpus","corpus",
 OralCorpus,"audioRecording",
-"AnthologiesDevotional, ""literature""","plainText",
+"AnthologiesDevotional, ""literature""",!,
+foo,,
