@@ -11,6 +11,7 @@
     
     <xsl:variable name="RE" select="'~'"/>
     <xsl:variable name="NOT" select="'!'"/>
+    <xsl:variable name="SKIP" select="'TF-'"/>
     
     <xsl:template match="text()"/>
 
@@ -31,9 +32,11 @@
                             </xsl:if>
                             <xsl:for-each select="$elemNames">
                                 <xsl:variable name="col" select="position()"/>
-                                <c n="{.}">
-                                    <xsl:value-of select="$lineItems[$col]"/>
-                                </c>
+                                <xsl:if test="not(matches(.,concat('^',$SKIP,'.*$'),'i'))">
+                                    <c n="{.}">
+                                        <xsl:value-of select="$lineItems[$col]"/>
+                                    </c>
+                                </xsl:if>
                             </xsl:for-each>
                         </r>
                     </xsl:for-each>

@@ -5,21 +5,22 @@ Tool to create a VLO mapping file based on a CSV and optionally a CLAVAS vocabul
 
 See [CSV file](src/test/resources/resourceclass-full.csv)
 
-|   | A                                        | B                  | C     |
-| - | ---------------------------------------- | ------------------ | ----- |
-| 1 | resourceclass                            | resourceclass      | genre |
-| 2 | AnnotatedTextCorpus                      | annotatedText;text | some  |
-| 3 | SongsAnthologiesLinguistic corporaCorpus | audioRecording     | other |
-| 4 | ~Speech.*                                | audioRecording     | foo   |
-| 5 | Spoken Corpus                            | audioRecording     | bar   |
-| 6 | OralCorpus                               | corpus             |       |
-| 7 | OralCorpus                               | audioRecording     |       |
-| 8 | AnthologiesDevotional, "literature"      | !                  |       |
-| 9 | foo                                      |                    |       |
+|   | A                                        | B                  | C     | D                |
+| - | ---------------------------------------- | ------------------ | ----- |------------------|
+| 1 | resourceclass                            | resourceclass      | genre | TF-Notes         |
+| 2 | AnnotatedTextCorpus                      | annotatedText;text | some  |                  |
+| 3 | SongsAnthologiesLinguistic corporaCorpus | audioRecording     | other |                  |
+| 4 | ~Speech.*                                | audioRecording     | foo   |                  |
+| 5 | Spoken Corpus                            | audioRecording     | bar   |                  |
+| 6 | OralCorpus                               | corpus             |       |                  |
+| 7 | OralCorpus                               | audioRecording     |       |                  |
+| 8 | AnthologiesDevotional, "literature"      | !                  |       | skip             |
+| 9 | foo                                      |                    |       | too be discussed |
 
 - Row 1: column headers referring to facets
 - Column A: source
-- Column B and higher: targets, each facet should appear only once
+- Column B and higher: targets, each facet should appear only once, unless a column header starts with `TF-` (case insensitive)
+- Column B and highter: a column where a header starts with `TF-` (case insensitive) is to be used by the task force (for notes or whatever) and will not be interpreted by the VLO Mapping Creator (see column D)
 - Source values (row 2 and higher, column A): if starting with a tilde (`~`) the value is assumed to be a regular expression (see line 4)
 - Target values (row 2 and higher, column B and higher): multiple values for one target facet are to be separated by semicolon (`;`) (see line 2)
 - Target values (row 2 and higher, column A): if the value is a exclamation mark (`!`) the source value is deleted and not replaced (see line 8)
@@ -28,15 +29,15 @@ See [CSV file](src/test/resources/resourceclass-full.csv)
 - If no target values/actions are known the row will be skipped (see line 9)
 
 ```
-"resourceclass","resourceclass","genre"
-"AnnotatedTextCorpus","annotatedText;text","some"
-"SongsAnthologiesLinguistic corporaCorpus","audioRecording","other"
-"~Speech.*","audioRecording","foo"
-"Spoken Corpus","audioRecording","bar"
-"OralCorpus","corpus",
-OralCorpus,"audioRecording",
-"AnthologiesDevotional, ""literature""","plainText",
-foo,,
+"resourceclass","resourceclass","genre","TF-notes"
+"AnnotatedTextCorpus","annotatedText;text","some",
+"SongsAnthologiesLinguistic corporaCorpus","audioRecording","other",
+"~Speech.*","audioRecording","foo",
+"Spoken Corpus","audioRecording","bar",
+"OralCorpus","corpus",,
+OralCorpus,"audioRecording",,
+"AnthologiesDevotional, ""literature""",!,,skip
+foo,,,to be discussed
 ```
 
 - Double quote (`“`) in the value can be escaped by doubling (`foo””bar`) (see line 8)

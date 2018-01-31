@@ -6,6 +6,8 @@
     <xsl:import href="csv.xsl"/>
 
     <xsl:param name="csv"/>
+    
+    <xsl:variable name="SKIP" select="'TF-'"/>
 
     <xsl:template match="/rdf:RDF">
         <xsl:variable name="new">
@@ -20,9 +22,11 @@
                             <xsl:variable name="lineItems" select="csv:getTokens(.)" as="xs:string+"/>
                             <xsl:for-each select="$elemNames">
                                 <xsl:variable name="pos" select="position()"/>
-                                <f n="{.}">
-                                    <xsl:value-of select="$lineItems[$pos]"/>
-                                </f>
+                                <xsl:if test="not(matches(.,concat('^',$SKIP,'.*$'),'i'))">
+                                    <f n="{.}">
+                                        <xsl:value-of select="$lineItems[$pos]"/>
+                                    </f>
+                                </xsl:if>
                             </xsl:for-each>
                         </l>
                     </xsl:for-each>

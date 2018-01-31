@@ -1,9 +1,9 @@
-"resourceclass","resourceclass","genre"
-"AnnotatedTextCorpus","annotatedText;text","some"
-"SongsAnthologiesLinguistic corporaCorpus","audioRecording","other"
-"~Speech.*","audioRecording","foo"
-"Spoken Corpus","audioRecording","bar"
-"OralCorpus","corpus",
-OralCorpus,"audioRecording",
-"AnthologiesDevotional, ""literature""",!,
-foo,,
+"resourceclass","resourceclass","genre","TF-notes"
+"AnnotatedTextCorpus","annotatedText;text","some",
+"SongsAnthologiesLinguistic corporaCorpus","audioRecording","other",
+"~Speech.*","audioRecording","foo",
+"Spoken Corpus","audioRecording","bar",
+"OralCorpus","corpus",,
+OralCorpus,"audioRecording",,
+"AnthologiesDevotional, ""literature""",!,,skip
+foo,,,to be discussed
