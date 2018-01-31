@@ -10,7 +10,7 @@ See [CSV file](src/test/resources/resourceclass-full.csv)
 | 1 | resourceclass                            | resourceclass      | genre |
 | 2 | AnnotatedTextCorpus                      | annotatedText;text | some  |
 | 3 | SongsAnthologiesLinguistic corporaCorpus | audioRecording     | other |
-| 4 | ~Speech*                                 | audioRecording     | foo   |
+| 4 | ~Speech.*                                | audioRecording     | foo   |
 | 5 | Spoken Corpus                            | audioRecording     | bar   |
 | 6 | OralCorpus                               | corpus             |       |
 | 7 | OralCorpus                               | audioRecording     |       |
@@ -28,7 +28,7 @@ See [CSV file](src/test/resources/resourceclass-full.csv)
 "resourceclass","resourceclass","genre"
 "AnnotatedTextCorpus","annotatedText;text","some"
 "SongsAnthologiesLinguistic corporaCorpus","audioRecording","other"
-"~Speech*","audioRecording","foo"
+"~Speech.*","audioRecording","foo"
 "Spoken Corpus","audioRecording","bar"
 "OralCorpus","corpus",
 OralCorpus,"audioRecording",

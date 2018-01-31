@@ -1,7 +1,7 @@
 "resourceclass","resourceclass","genre"
 "AnnotatedTextCorpus","annotatedText;text","some"
 "SongsAnthologiesLinguistic corporaCorpus","audioRecording","other"
-"~Speech*","audioRecording","foo"
+"~Speech.*","audioRecording","foo"
 "Spoken Corpus","audioRecording","bar"
 "OralCorpus","corpus",
 OralCorpus,"audioRecording",
